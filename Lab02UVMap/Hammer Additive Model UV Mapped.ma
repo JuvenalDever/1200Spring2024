@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Hammer Additive Model UV Mapped.ma
-//Last modified: Wed, Feb 07, 2024 02:43:35 PM
+//Last modified: Wed, Feb 07, 2024 08:24:16 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.4.1";
@@ -11,18 +11,18 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202310181224-69282f2959";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19045)";
-fileInfo "UUID" "8DE32E2B-4DD0-5359-3EA1-F2A5C46B7183";
+fileInfo "UUID" "9BFD3926-495F-ABE9-B7B3-CE86DFFEA19C";
 createNode transform -s -n "persp";
 	rename -uid "DC558D92-4EE6-82F2-76FE-3FA66DC4A67B";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -5.2374978041120812 16.291914610729037 -13.098877592628163 ;
-	setAttr ".r" -type "double3" -28.799999999999276 920.39999999992745 0 ;
+	setAttr ".t" -type "double3" -32.811064634496702 24.036363660262161 45.957035085426078 ;
+	setAttr ".r" -type "double3" -14.999999999999796 1045.1999999998984 9.6832422356676906e-16 ;
 	setAttr ".rpt" -type "double3" 3.8661498917694591e-15 -5.0883323040413383e-15 2.7173893374709883e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "DF4962DB-4A10-3C37-E419-DA957B868D63";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 15.372884888372916;
+	setAttr ".coi" 58.536622836424797;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -82,15 +82,44 @@ createNode transform -n "HammerHandle1";
 	rename -uid "3149FB0C-4E8E-944F-9264-CD87534976E8";
 	setAttr ".rp" -type "double3" 0.70711241063244334 6.1214123715859987 0 ;
 	setAttr ".sp" -type "double3" 0.70711241063244334 6.1214123715859987 0 ;
-createNode mesh -n "HammerHandle1Shape" -p "HammerHandle1";
-	rename -uid "C6FFD0AE-4E39-958C-766D-95877F9C3312";
+createNode transform -n "polySurface1" -p "HammerHandle1";
+	rename -uid "FA8F2933-4037-219A-90BC-1398237965DE";
+createNode mesh -n "polySurfaceShape1" -p "polySurface1";
+	rename -uid "EB68BEAD-4C26-E609-600E-879E5160149A";
 	setAttr -k off ".v";
 	setAttr -s 4 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface2" -p "HammerHandle1";
+	rename -uid "D6ECB133-4FA4-E26E-6461-55B47B7025A0";
+createNode mesh -n "polySurfaceShape2" -p "polySurface2";
+	rename -uid "DC308066-4573-4762-E504-3199E99286BA";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.20715248584747314 0.9086090118654313 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "transform1" -p "HammerHandle1";
+	rename -uid "767EDBAB-466C-DA4B-5BF2-5880F496CB85";
+	setAttr ".v" no;
+createNode mesh -n "HammerHandle1Shape" -p "transform1";
+	rename -uid "C6FFD0AE-4E39-958C-766D-95877F9C3312";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
 	setAttr ".iog[0].og[1].gcl" -type "componentList" 4 "f[1]" "f[16]" "f[24:25]" "f[40:123]";
 	setAttr ".iog[0].og[2].gcl" -type "componentList" 5 "f[0]" "f[2:15]" "f[17:23]" "f[26:39]" "f[124:131]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr -s 2 ".ciog[0].cog";
 	setAttr -s 6 ".gtag";
 	setAttr ".gtag[0].gtagnm" -type "string" "back";
 	setAttr ".gtag[0].gtagcmp" -type "componentList" 4 "f[2]" "f[28]" "f[42]" "f[83]";
@@ -104,7 +133,7 @@ createNode mesh -n "HammerHandle1Shape" -p "HammerHandle1";
 	setAttr ".gtag[4].gtagcmp" -type "componentList" 7 "f[4]" "f[21]" "f[44]" "f[46:60]" "f[69]" "f[77]" "f[84:91]";
 	setAttr ".gtag[5].gtagnm" -type "string" "top";
 	setAttr ".gtag[5].gtagcmp" -type "componentList" 6 "f[1]" "f[6:18]" "f[22:27]" "f[32:39]" "f[41]" "f[70]";
-	setAttr ".pv" -type "double2" -0.14446115493774414 0.2662123441696167 ;
+	setAttr ".pv" -type "double2" 0.5809551477432251 0.3275914192199707 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 223 ".uvst[0].uvsp[0:222]" -type "float2" 1.78669822 1.51667988
 		 2.19262123 1.59434474 1.99834538 1.79005396 1.78600335 1.75978959 2.27024746 2.010706425
@@ -143,13 +172,13 @@ createNode mesh -n "HammerHandle1Shape" -p "HammerHandle1";
 		 0.65613478 0.64802051 0.6578545 0.93901783 0.80551183 0.64893162 0.79960698 0.93997186
 		 0.83646613 0.61187106 0.84575909 0.052231312 0.62223542 0.051059693 0.68789703 0.974536
 		 0.6489917 0.96354681 0.72851014 0.96926242 0.76904154 0.97508031 0.80810624 0.96462101
-		 0.36872429 0.047563612 0.42149794 0.04792282 0.4154222 0.60761923 0.36541495 0.60143191
-		 0.26749939 0.6012758 0.21702988 0.60757262 0.21088605 0.048359305 0.26316336 0.047916532
-		 0.31593382 0.04755047 0.31646764 0.60112625 0.38676745 0.64472401 0.35266405 0.64185417
-		 0.2802625 0.64186722 0.24567096 0.64484471 0.31651196 0.64037287 0.38356853 0.935597
-		 0.35021666 0.9390257 0.28332749 0.93904591 0.25046989 0.93573564 0.31672114 0.9388395
-		 0.39169714 0.9601835 0.35496658 0.97081965 0.31674618 0.96524829 0.27861387 0.97084755
-		 0.24216194 0.96027666 -0.28960153 -2.84401917 -0.00064546615 -2.84568501 0.00099436939
+		 0.55622298 0.047563612 0.60899663 0.04792282 0.60292089 0.60761923 0.55291367 0.60143191
+		 0.45499808 0.6012758 0.40452859 0.60757262 0.39838475 0.048359305 0.45066208 0.047916532
+		 0.50343251 0.04755047 0.50396633 0.60112625 0.57426614 0.64472401 0.54016274 0.64185417
+		 0.46776122 0.64186722 0.43316966 0.64484471 0.50401068 0.64037287 0.57106721 0.935597
+		 0.53771538 0.9390257 0.47082621 0.93904591 0.43796861 0.93573564 0.50421983 0.9388395
+		 0.57919586 0.9601835 0.54246527 0.97081965 0.50424486 0.96524829 0.46611255 0.97084755
+		 0.42966065 0.96027666 -0.28960153 -2.84401917 -0.00064546615 -2.84568501 0.00099436939
 		 -2.55215597 -0.21793872 -2.62243342 -0.22041896 -3.066416979 -0.0022852793 -3.13921404
 		 0.21664762 -3.068936586 0.28831044 -2.84735084 0.21912789 -2.62495279 0.0023621544
 		 -2.307266 -0.39180499 -2.44379973 -0.53067625 -2.84262967 -0.39626974 -3.2430346
@@ -512,20 +541,20 @@ createNode mesh -n "HammerHandle1Shape" -p "HammerHandle1";
 createNode place3dTexture -n "place3dTexture1";
 	rename -uid "9C28D23A-4C8A-0686-1DD7-7692BDDA9B0B";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "98B8873C-4BBA-4ED7-4E5A-BDA87FFA84E2";
-	setAttr -s 7 ".lnk";
-	setAttr -s 7 ".slnk";
+	rename -uid "1E209B37-4719-72C5-B94A-74A3C08CA8EF";
+	setAttr -s 6 ".lnk";
+	setAttr -s 6 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "7547EB49-47C8-004A-23A4-ADB8209F6561";
+	rename -uid "AF1A8536-4A6E-B046-760E-DF91B0D086A4";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "E11EB1F7-4C4D-3975-B3CE-308D9012B67E";
+	rename -uid "2B2944B5-44C7-0659-1C35-4CB1BE6EB362";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "FF2A6C1C-4A84-DA02-DAA9-E690E805C494";
+	rename -uid "75ED8E4D-49A7-2E78-DE3A-189CC02EA396";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "FD6A01B8-48D0-FC78-36BA-01BFF9E5A4A3";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "16A831FC-4738-67BD-3578-0A9D7476884B";
+	rename -uid "0844EC4C-4C91-3822-48A9-EEA6D44E606D";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "E00F6DED-46A0-6C0F-36F6-B18701E8391C";
 	setAttr ".g" yes;
@@ -591,13 +620,12 @@ createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".st" 6;
 createNode lambert -n "HammerMaterial";
 	rename -uid "E2EBB26B-4FD4-84F5-E4D9-5E8248F985C3";
-	setAttr ".c" -type "float3" 0.07692308 0.07692308 0.07692308 ;
 createNode shadingEngine -n "lambert2SG";
 	rename -uid "E9B53488-484B-9758-D086-4EB1AEE9155F";
 	setAttr ".ihi" 0;
-	setAttr -s 2 ".dsm";
+	setAttr -s 4 ".dsm";
 	setAttr ".ro" yes;
-	setAttr -s 2 ".gn";
+	setAttr -s 3 ".gn";
 createNode materialInfo -n "materialInfo1";
 	rename -uid "BEC2E343-4D61-E3DF-F5EF-54BCA0DD08A8";
 createNode lambert -n "lambert3";
@@ -649,12 +677,14 @@ createNode file -n "file4";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture4";
 	rename -uid "70CE8118-4616-E8ED-2247-5FB7BACAA9C7";
-createNode lambert -n "lambert5";
+createNode lambert -n "Wood_Handle_Material";
 	rename -uid "85038CB0-48AE-0627-CECC-458A4177F0E1";
 createNode shadingEngine -n "lambert5SG";
 	rename -uid "B47679A3-4F7B-4896-AD75-368441439AAE";
 	setAttr ".ihi" 0;
+	setAttr -s 2 ".dsm";
 	setAttr ".ro" yes;
+	setAttr -s 2 ".gn";
 createNode materialInfo -n "materialInfo4";
 	rename -uid "0179B22A-402B-FB9C-BDE1-4B99DF8E44D0";
 createNode file -n "file5";
@@ -663,8 +693,78 @@ createNode file -n "file5";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture5";
 	rename -uid "4D311B93-4479-22EA-83F7-7F9BDE306F78";
+createNode polySeparate -n "polySeparate1";
+	rename -uid "AF942085-427D-F982-E116-9C8DAFC394A3";
+	setAttr ".ic" 2;
+	setAttr -s 2 ".out";
+createNode groupId -n "groupId4";
+	rename -uid "6D860733-4552-B926-3861-3A847908A8A7";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts1";
+	rename -uid "DF98E724-4134-7B6E-9039-4E9121485FC9";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 4 "f[1]" "f[16]" "f[24]" "f[25]";
+createNode groupId -n "groupId5";
+	rename -uid "2922B33D-4E31-84AD-8F6A-12AFCB16AB15";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts2";
+	rename -uid "1C04AACF-4F56-C4C3-99C5-828B06A3EC41";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 44 "f[0]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]";
+createNode file -n "file6";
+	rename -uid "9345E2F9-4A6C-E44D-4891-65B754B1273F";
+	setAttr ".ftn" -type "string" "C:/Users/andre/OneDrive/Documents/GitRepos/1200Spring2024/Lab02UVMap/Textures/Rough Metal Texture.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "place2dTexture6";
+	rename -uid "0453555A-424E-1CC2-9913-5E9D17965460";
+createNode polyTweakUV -n "polyTweakUV1";
+	rename -uid "654D97F6-4267-69AE-9469-94B36CBB722E";
+	setAttr ".uopa" yes;
+	setAttr -s 156 ".uvtk[0:155]" -type "float2" 0.32151031 -1.34288609 -0.12865025
+		 -1.32016861 -0.14612108 -1.44973552 0.3005113 -1.47214651 0.28063616 -1.60150504
+		 -0.16471559 -1.57920504 -0.18398744 -1.70996499 0.26104212 -1.7322371 0.26802063
+		 -0.86878669 -0.17343742 -0.9068265 -0.14071691 -1.035321474 0.30113971 -0.99725783
+		 0.22317103 -1.17115235 0.0012945533 -1.17607605 0.014854014 -1.24171591 0.21001303
+		 -1.24553096 3.42120361 2.26059747 3.38891482 2.39927816 3.18748331 2.35641885 3.19290853
+		 2.28174543 -2.41202641 0.49427783 -2.54751873 0.55354661 -2.67536354 0.48888031 -2.50495028
+		 0.37191203 1.56512558 -0.74078655 1.20384479 -0.76768708 1.26364112 -0.98278546 1.56744099
+		 -0.93533802 0.87578142 -0.91392756 0.85156232 -1.2646085 1.0070334673 -1.29292822
+		 0.9748407 -1.084162593 1.42580152 -1.56661546 1.76536393 -1.40603352 1.65668893 -1.33802378
+		 1.38999724 -1.43779755 1.76836014 -1.034482241 1.6478231 -1.13201737 1.62547708 0.12457291
+		 1.7260716 0.44492799 1.8266654 0.76528311 1.22595882 0.93577355 1.12536526 0.61541879
+		 1.024770975 0.29506361 1.71244717 0.99701947 1.20068669 0.99628371 1.60061765 1.22980738
+		 1.46226406 1.53717089 1.32391071 1.84453392 0.89625555 1.67054152 1.034609318 1.36317825
+		 1.17296195 1.055814981 1.39632607 -0.0097095892 0.96874291 0.25762749 3.057072878
+		 2.84457874 2.48400402 2.38408613 2.44817758 2.238765 2.47673965 2.082247257 3.056678295
+		 1.64959168 3.40606928 2.12011385 3.17527175 2.20534348 4.14760542 1.10247064 4.12151146
+		 1.23649776 3.47600079 1.13210237 3.46615505 1.065791488 3.21793699 0.83120668 3.64865875
+		 0.46689826 4.12044811 0.95860648 3.45417666 0.99382138 3.054134369 1.065370679 3.11813831
+		 0.93975866 3.41904378 1.54941642 -1.055968523 -0.84576416 -1.40429544 -0.90912437
+		 -1.23758531 -1.068787336 -1.055372238 -1.044097066 -1.47090745 -1.2487992 -1.27899647
+		 -1.25060391 -1.41543508 -1.58827162 -1.060633898 -1.66758728 -1.058647156 -1.46167278
+		 -1.24187708 -1.43302822 -0.64214319 -1.25654685 -0.69857532 -0.91749167 -0.87209028
+		 -1.072687507 -0.83429796 -1.25489283 -1.15374565 0.19703275 -1.014547825 0.19993237
+		 -0.9140082 0.29859996 -1.16375279 0.36079377 -0.94743186 0.070576303 -0.77585715
+		 0.081984088 -0.95062703 -0.069803178 -1.084964752 -0.11729628 -1.078140259 -0.26687399
+		 -0.85738975 -0.16154167 -1.28708839 0.012970738 -1.28414392 0.14729409 -1.38373542
+		 0.2427682 -1.46341324 -0.0070466176 1.047044039 -1.5863986 1.10623527 -1.47625446
+		 0.2017518 -0.61050391 -0.23952538 -0.64853251 -0.20628488 -0.77833915 0.23502871
+		 -0.74030817 -0.70434314 -1.59469378 -0.87489015 -1.43643796 -1.21907425 -0.10505992
+		 -1.32727194 -0.22754396 -2.31021023 0.39066279 -2.33453679 0.25494358 0.20211759
+		 -1.09725666 0.0081192851 -1.11050844 -2.69968963 0.35316148 -2.59787393 0.24954644
+		 -2.4623816 0.19027758 1.1685667 -0.14611644 0.91122872 0.22228873 -0.85182184 0.37727097
+		 -1.17226958 0.44632551 -0.67239553 0.089643225 -1.46324635 0.30572462 -1.56635809
+		 -0.019856192 -0.77999789 -0.22587687 -1.065222025 -0.35555643 -1.38344502 -0.30759576
+		 -1.26220441 1.27699113 -1.13049722 1.24951386 -0.96618325 1.42812431 -1.26433134
+		 1.52407384 -1.073942661 1.11634338 -0.81064063 1.11789143 -1.39346051 1.24745262
+		 -1.56058478 1.42389536 -1.448313 1.11359441 -1.71161485 1.11204636 -1.12879515 0.98248518
+		 -0.96166998 0.80604255 -1.26005077 0.95294678 -1.25792432 0.70586419 -1.3917582 0.98042381
+		 -1.55607152 0.8018136 -0.14598554 -1.17750895 -1.077204704 -0.64111817 -1.26501894
+		 -0.64795423 -0.71562487 -0.84558988 -0.89345521 -0.61461186 -2.26047301 0.69384968
+		 -2.55613852 0.79677832 -2.86777496 0.62094808 -2.064656973 0.45943472 -2.14212513
+		 0.12287579 -2.94524336 0.28438926 -2.74942732 0.049974613 -2.45376182 -0.052954376;
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "9DBE4A5F-466C-BEA4-A47F-41920C033D92";
+	rename -uid "8B4B0966-4903-33B3-CFAF-788896B2EE05";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
 	setAttr ".o" 1;
@@ -684,10 +784,10 @@ select -ne :defaultShaderList1;
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 6 ".u";
+	setAttr -s 7 ".u";
 select -ne :defaultRenderingList1;
 select -ne :defaultTextureList1;
-	setAttr -s 6 ".tx";
+	setAttr -s 7 ".tx";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
@@ -713,8 +813,13 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
+connectAttr "groupParts2.og" "polySurfaceShape1.i";
+connectAttr "groupId4.id" "polySurfaceShape1.iog.og[0].gid";
+connectAttr "lambert2SG.mwc" "polySurfaceShape1.iog.og[0].gco";
+connectAttr "groupId5.id" "polySurfaceShape1.iog.og[1].gid";
+connectAttr "lambert5SG.mwc" "polySurfaceShape1.iog.og[1].gco";
+connectAttr "polyTweakUV1.out" "polySurfaceShape2.i";
+connectAttr "polyTweakUV1.uvtk[0]" "polySurfaceShape2.uvst[0].uvtw";
 connectAttr "groupId1.id" "HammerHandle1Shape.iog.og[1].gid";
 connectAttr "lambert2SG.mwc" "HammerHandle1Shape.iog.og[1].gco";
 connectAttr "groupId3.id" "HammerHandle1Shape.iog.og[2].gid";
@@ -738,13 +843,18 @@ connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drive
 		 -na;
 connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
 connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
+connectAttr "file6.oc" "HammerMaterial.c";
 connectAttr "HammerMaterial.oc" "lambert2SG.ss";
 connectAttr "HammerHandle1Shape.iog.og[1]" "lambert2SG.dsm" -na;
 connectAttr "HammerHandle1Shape.ciog.cog[1]" "lambert2SG.dsm" -na;
+connectAttr "polySurfaceShape1.iog.og[0]" "lambert2SG.dsm" -na;
+connectAttr "polySurfaceShape2.iog" "lambert2SG.dsm" -na;
 connectAttr "groupId1.msg" "lambert2SG.gn" -na;
 connectAttr "groupId2.msg" "lambert2SG.gn" -na;
+connectAttr "groupId4.msg" "lambert2SG.gn" -na;
 connectAttr "lambert2SG.msg" "materialInfo1.sg";
 connectAttr "HammerMaterial.msg" "materialInfo1.m";
+connectAttr "file6.msg" "materialInfo1.t" -na;
 connectAttr "lambert3.oc" "lambert3SG.ss";
 connectAttr "lambert3SG.msg" "materialInfo2.sg";
 connectAttr "lambert3.msg" "materialInfo2.m";
@@ -840,12 +950,14 @@ connectAttr "place2dTexture4.vt3" "file4.vt3";
 connectAttr "place2dTexture4.vc1" "file4.vc1";
 connectAttr "place2dTexture4.o" "file4.uv";
 connectAttr "place2dTexture4.ofs" "file4.fs";
-connectAttr "file5.oc" "lambert5.c";
-connectAttr "lambert5.oc" "lambert5SG.ss";
+connectAttr "file5.oc" "Wood_Handle_Material.c";
+connectAttr "Wood_Handle_Material.oc" "lambert5SG.ss";
 connectAttr "HammerHandle1Shape.iog.og[2]" "lambert5SG.dsm" -na;
+connectAttr "polySurfaceShape1.iog.og[1]" "lambert5SG.dsm" -na;
 connectAttr "groupId3.msg" "lambert5SG.gn" -na;
+connectAttr "groupId5.msg" "lambert5SG.gn" -na;
 connectAttr "lambert5SG.msg" "materialInfo4.sg";
-connectAttr "lambert5.msg" "materialInfo4.m";
+connectAttr "Wood_Handle_Material.msg" "materialInfo4.m";
 connectAttr "file5.msg" "materialInfo4.t" -na;
 connectAttr ":defaultColorMgtGlobals.cme" "file5.cme";
 connectAttr ":defaultColorMgtGlobals.cfe" "file5.cmcf";
@@ -869,6 +981,34 @@ connectAttr "place2dTexture5.vt3" "file5.vt3";
 connectAttr "place2dTexture5.vc1" "file5.vc1";
 connectAttr "place2dTexture5.o" "file5.uv";
 connectAttr "place2dTexture5.ofs" "file5.fs";
+connectAttr "HammerHandle1Shape.o" "polySeparate1.ip";
+connectAttr "polySeparate1.out[0]" "groupParts1.ig";
+connectAttr "groupId4.id" "groupParts1.gi";
+connectAttr "groupParts1.og" "groupParts2.ig";
+connectAttr "groupId5.id" "groupParts2.gi";
+connectAttr ":defaultColorMgtGlobals.cme" "file6.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file6.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file6.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file6.ws";
+connectAttr "place2dTexture6.c" "file6.c";
+connectAttr "place2dTexture6.tf" "file6.tf";
+connectAttr "place2dTexture6.rf" "file6.rf";
+connectAttr "place2dTexture6.mu" "file6.mu";
+connectAttr "place2dTexture6.mv" "file6.mv";
+connectAttr "place2dTexture6.s" "file6.s";
+connectAttr "place2dTexture6.wu" "file6.wu";
+connectAttr "place2dTexture6.wv" "file6.wv";
+connectAttr "place2dTexture6.re" "file6.re";
+connectAttr "place2dTexture6.of" "file6.of";
+connectAttr "place2dTexture6.r" "file6.ro";
+connectAttr "place2dTexture6.n" "file6.n";
+connectAttr "place2dTexture6.vt1" "file6.vt1";
+connectAttr "place2dTexture6.vt2" "file6.vt2";
+connectAttr "place2dTexture6.vt3" "file6.vt3";
+connectAttr "place2dTexture6.vc1" "file6.vc1";
+connectAttr "place2dTexture6.o" "file6.uv";
+connectAttr "place2dTexture6.ofs" "file6.fs";
+connectAttr "polySeparate1.out[1]" "polyTweakUV1.ip";
 connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert3SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert4SG.pa" ":renderPartition.st" -na;
@@ -876,13 +1016,14 @@ connectAttr "lambert5SG.pa" ":renderPartition.st" -na;
 connectAttr "HammerMaterial.msg" ":defaultShaderList1.s" -na;
 connectAttr "lambert3.msg" ":defaultShaderList1.s" -na;
 connectAttr "WoodHandle.msg" ":defaultShaderList1.s" -na;
-connectAttr "lambert5.msg" ":defaultShaderList1.s" -na;
+connectAttr "Wood_Handle_Material.msg" ":defaultShaderList1.s" -na;
 connectAttr "place2dTexture1.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "place2dTexture2.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "place2dTexture3.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "place3dTexture1.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "place2dTexture4.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "place2dTexture5.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture6.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file2.msg" ":defaultTextureList1.tx" -na;
@@ -890,4 +1031,5 @@ connectAttr "file3.msg" ":defaultTextureList1.tx" -na;
 connectAttr "wood1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file4.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file5.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file6.msg" ":defaultTextureList1.tx" -na;
 // End of Hammer Additive Model UV Mapped.ma
