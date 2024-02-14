@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Lamp Surface Model.ma
-//Last modified: Wed, Feb 14, 2024 01:33:05 PM
+//Last modified: Wed, Feb 14, 2024 01:43:17 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.4.1";
@@ -11,7 +11,7 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202310181224-69282f2959";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19045)";
-fileInfo "UUID" "8DBB7DB7-4A49-A1D3-D7CE-81A6F12BCCEA";
+fileInfo "UUID" "C3292D20-4190-2900-2F3C-749A16F9526F";
 createNode transform -s -n "persp";
 	rename -uid "3F150596-4988-F406-4831-B2BE232BAFF6";
 	setAttr ".v" no;
@@ -566,7 +566,7 @@ createNode groupId -n "groupId2";
 	rename -uid "A5F89191-4090-6299-5843-D79E20396A17";
 	setAttr ".ihi" 0;
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "68CF770C-4FA9-F76F-2CEC-0FB89EBB0E8B";
+	rename -uid "C07BFF74-4FAE-38AF-FFB1-62947C76EF8F";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
 	setAttr ".o" 1;
