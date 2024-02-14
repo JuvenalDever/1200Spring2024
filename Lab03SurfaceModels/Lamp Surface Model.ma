@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Lamp Surface Model.ma
-//Last modified: Wed, Feb 14, 2024 01:31:04 PM
+//Last modified: Wed, Feb 14, 2024 01:33:05 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.4.1";
@@ -11,18 +11,18 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202310181224-69282f2959";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19045)";
-fileInfo "UUID" "7BD245B2-4879-D17E-86A6-EBA6E8D6E5C3";
+fileInfo "UUID" "8DBB7DB7-4A49-A1D3-D7CE-81A6F12BCCEA";
 createNode transform -s -n "persp";
 	rename -uid "3F150596-4988-F406-4831-B2BE232BAFF6";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 5.7173335866253119 3.1553874298984002 -3.039960434160756 ;
+	setAttr ".t" -type "double3" 5.7173335866248216 3.1553874298983278 -3.0399604341604967 ;
 	setAttr ".r" -type "double3" -7.8000000000011429 117.99999999999439 0 ;
 	setAttr ".rpt" -type "double3" 1.1718067371954301e-15 -2.5850612766266405e-16 -7.8700712509300815e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "CC2FE74B-42E9-5949-6CF2-D9B5AF58DE88";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 6.5357507334473945;
+	setAttr ".coi" 6.5357507334468936;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -111,7 +111,7 @@ createNode mesh -n "pCylinderShape1" -p "pCylinder1";
 	setAttr ".gtag[8].gtagcmp" -type "componentList" 1 "f[40:119]";
 	setAttr ".gtag[9].gtagnm" -type "string" "topRing";
 	setAttr ".gtag[9].gtagcmp" -type "componentList" 1 "e[20:39]";
-	setAttr ".pv" -type "double2" 0.77998924255371094 0.72310882806777954 ;
+	setAttr ".pv" -type "double2" 0.31319885700941086 0.723652184009552 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 165 ".uvst[0].uvsp[0:164]" -type "float2" 0.53872627 0.16103041
 		 0.56822401 0.17812395 0.39977443 0.4762907 0.38891381 0.46911526 0.59660834 0.19718719
@@ -566,7 +566,7 @@ createNode groupId -n "groupId2";
 	rename -uid "A5F89191-4090-6299-5843-D79E20396A17";
 	setAttr ".ihi" 0;
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "9C336E9A-4969-D7B1-B472-3F806BB2F4C1";
+	rename -uid "68CF770C-4FA9-F76F-2CEC-0FB89EBB0E8B";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
 	setAttr ".o" 1;
@@ -611,6 +611,8 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
+select -ne :ikSystem;
+	setAttr -s 4 ".sol";
 connectAttr "groupId1.id" "pCylinderShape1.iog.og[2].gid";
 connectAttr "phongE1SG.mwc" "pCylinderShape1.iog.og[2].gco";
 connectAttr "groupId2.id" "pCylinderShape1.iog.og[3].gid";
