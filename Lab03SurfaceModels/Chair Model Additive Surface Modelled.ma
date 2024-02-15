@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Chair Model Additive Surface Modelled.ma
-//Last modified: Wed, Feb 14, 2024 09:16:40 PM
+//Last modified: Wed, Feb 14, 2024 09:54:12 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.4.1";
@@ -11,7 +11,7 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202310181224-69282f2959";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19045)";
-fileInfo "UUID" "AA604459-4495-77C8-4FCF-37924DFE99C5";
+fileInfo "UUID" "EB7C8ADF-4B36-F0A0-16E6-6E928DE02AD6";
 createNode transform -s -n "persp";
 	rename -uid "BCD82E9D-4065-90AC-E00D-A4B62A6E948E";
 	setAttr ".v" no;
@@ -772,7 +772,7 @@ createNode groupId -n "groupId9";
 	rename -uid "37493069-4AC4-5F70-2AFE-44B3B9292242";
 	setAttr ".ihi" 0;
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "AF71CAD1-424E-FBB4-87B4-B58103767AF9";
+	rename -uid "B6C8A1CF-4A18-CF40-2BAE-20ADF9AB7C73";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
 	setAttr ".o" 1;
@@ -819,6 +819,8 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
+select -ne :ikSystem;
+	setAttr -s 4 ".sol";
 connectAttr "groupId8.id" "Leg_LeftShape.iog.og[0].gid";
 connectAttr "lambert3SG.mwc" "Leg_LeftShape.iog.og[0].gco";
 connectAttr "groupId9.id" "Leg_LeftShape.ciog.cog[0].cgid";
