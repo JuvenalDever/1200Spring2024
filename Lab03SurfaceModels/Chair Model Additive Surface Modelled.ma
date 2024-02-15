@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
-//Name: Chair Model Additive UV Mapped.ma
-//Last modified: Wed, Feb 14, 2024 08:25:03 PM
+//Name: Chair Model Additive Surface Modelled.ma
+//Last modified: Wed, Feb 14, 2024 08:26:48 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.4.1";
@@ -11,7 +11,7 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202310181224-69282f2959";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19045)";
-fileInfo "UUID" "14A1F059-45C9-8185-C109-3CBE2A64DB33";
+fileInfo "UUID" "5997AE69-463E-8FE3-162C-2C819C39A223";
 createNode transform -s -n "persp";
 	rename -uid "BCD82E9D-4065-90AC-E00D-A4B62A6E948E";
 	setAttr ".v" no;
@@ -772,7 +772,7 @@ createNode groupId -n "groupId9";
 	rename -uid "37493069-4AC4-5F70-2AFE-44B3B9292242";
 	setAttr ".ihi" 0;
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "F419AB35-4173-69C2-D567-E2958E1898A2";
+	rename -uid "4C83C605-4787-BCBB-E418-2A85499FA8A3";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
 	setAttr ".o" 1;
@@ -897,4 +897,4 @@ connectAttr "lambert4.msg" ":defaultShaderList1.s" -na;
 connectAttr "place2dTexture1.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
-// End of Chair Model Additive UV Mapped.ma
+// End of Chair Model Additive Surface Modelled.ma
