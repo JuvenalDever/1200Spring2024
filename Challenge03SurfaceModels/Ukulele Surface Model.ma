@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
-//Name: Ukulele Additive Model.ma
-//Last modified: Fri, Feb 16, 2024 12:19:48 PM
+//Name: Ukulele Surface Model.ma
+//Last modified: Fri, Feb 16, 2024 12:21:26 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.4.1";
@@ -11,7 +11,7 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202310181224-69282f2959";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19045)";
-fileInfo "UUID" "897A32A1-4C2C-9A1B-070C-258530476F16";
+fileInfo "UUID" "03FB6A4E-4437-2B51-D7A4-A48C4DC6605D";
 createNode transform -s -n "persp";
 	rename -uid "8709494F-41D5-EE3C-C6E8-A48574427C30";
 	setAttr ".v" no;
@@ -412,7 +412,7 @@ createNode groupId -n "groupId2";
 	rename -uid "36F0DBEB-4207-BB01-33CB-5B89E40AED01";
 	setAttr ".ihi" 0;
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "CEDACE8A-42A8-B99F-4459-18AB30EEED94";
+	rename -uid "18CAEEEB-4682-4B6A-A185-D6A2E3C8391B";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
 	setAttr ".o" 1;
@@ -492,4 +492,4 @@ connectAttr "lambert3SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert2.msg" ":defaultShaderList1.s" -na;
 connectAttr "lambert3.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-// End of Ukulele Additive Model.ma
+// End of Ukulele Surface Model.ma
