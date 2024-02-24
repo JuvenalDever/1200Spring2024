@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: EggmanModel.ma
-//Last modified: Fri, Feb 23, 2024 10:05:34 PM
+//Last modified: Fri, Feb 23, 2024 10:30:56 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.4.1";
@@ -11,18 +11,18 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202310181224-69282f2959";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19045)";
-fileInfo "UUID" "836B624F-4894-DE7F-5E12-64802CB16A5C";
+fileInfo "UUID" "397210DF-4EA1-3934-7C4B-C898190E8321";
 createNode transform -s -n "persp";
 	rename -uid "325DFE2C-4C7B-4AC6-1A56-F58A63D83B76";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 3.4966103283837779 2.1666220715087809 4.3757058783605745 ;
-	setAttr ".r" -type "double3" 2.3999999999934629 -681.9999999999967 0 ;
+	setAttr ".t" -type "double3" -2.3997361948132689 2.4232679617090369 -1.1791330908363737 ;
+	setAttr ".r" -type "double3" -1.7999999999990739 -828.39999999999111 0 ;
 	setAttr ".rpt" -type "double3" 6.634014148444498e-15 3.0797613568242802e-15 -2.769057218480223e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "2D65CB57-4C5F-8C0A-F57D-A68D2A705E7E";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 5.736459813869998;
+	setAttr ".coi" 2.5736989275068147;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -136,7 +136,7 @@ createNode mesh -n "Body_and_headShape" -p "Body_and_head";
 	setAttr ".gtag[5].gtagcmp" -type "componentList" 0;
 	setAttr ".gtag[6].gtagnm" -type "string" "top";
 	setAttr ".gtag[6].gtagcmp" -type "componentList" 17 "f[1]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]";
-	setAttr ".pv" -type "double2" 0.75495370442710519 0.47157979011535645 ;
+	setAttr ".pv" -type "double2" 0.76425814628601074 0.50008131563663483 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 52 ".uvst[0].uvsp[0:51]" -type "float2" 0.71483374 0.37295842
 		 0.76818204 0.3969245 0.7590884 0.43590927 0.67733085 0.4063555 0.73521459 0.58877134
@@ -156,6 +156,8 @@ createNode mesh -n "Body_and_headShape" -p "Body_and_head";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 5 ".pt";
+	setAttr ".pt[13]" -type "float3" 0 0 -0.21714127 ;
 	setAttr -s 40 ".vt[0:39]"  -0.33959776 1.065157652 0.39223051 0.41442293 1.065157652 0.39223051
 		 -0.51385701 2.48860645 0.45191276 0.59125054 2.48860645 0.45191276 -0.51385701 2.48860645 -0.66202223
 		 0.59125054 2.48860645 -0.66202223 -0.33959776 1.065157652 -0.42992449 0.41442293 1.065157652 -0.42992449
@@ -1153,7 +1155,7 @@ createNode groupId -n "groupId13";
 	rename -uid "89D4CB71-4D50-0D51-0B48-2C9A8266575F";
 	setAttr ".ihi" 0;
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "A7D1A636-434E-8530-1840-089B8AFC9AC9";
+	rename -uid "28570BB8-4D36-CE07-A317-0EBEC1F5EACA";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
 	setAttr ".o" 1;
