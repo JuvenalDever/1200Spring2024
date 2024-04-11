@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
-//Name: Ukulele Surface Model.ma
-//Last modified: Wed, Apr 10, 2024 07:41:17 PM
+//Name: Ukulele Light Model.ma
+//Last modified: Wed, Apr 10, 2024 07:42:02 PM
 //Codeset: 1252
 requires maya "2024";
 requires "stereoCamera" "10.0";
@@ -13,7 +13,7 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202310181224-69282f2959";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22631)";
-fileInfo "UUID" "B4CD6F54-4C82-831A-D949-B9AC57D38D08";
+fileInfo "UUID" "A7F13CDE-476F-C9DE-52D3-8DACC9897D1C";
 createNode transform -s -n "persp";
 	rename -uid "8709494F-41D5-EE3C-C6E8-A48574427C30";
 	setAttr ".v" no;
@@ -622,7 +622,7 @@ createNode polyPlane -n "polyPlane1";
 	rename -uid "EC3BA9AC-490C-6B8B-9AC1-6391266A81B0";
 	setAttr ".cuv" 2;
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "5DBDF678-4D55-A9AD-4C61-5AA30F1E0EEE";
+	rename -uid "9DFAE51A-4F59-E7B6-E1DF-0D850D82B0C1";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
 	setAttr ".o" 1;
@@ -961,4 +961,4 @@ connectAttr "file7.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file8.msg" ":defaultTextureList1.tx" -na;
 connectAttr "pPlaneShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "areaLight1.iog" ":defaultLightSet.dsm" -na;
-// End of Ukulele Surface Model.ma
+// End of Ukulele Light Model.ma
