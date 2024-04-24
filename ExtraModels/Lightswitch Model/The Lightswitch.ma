@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: The Lightswitch.ma
-//Last modified: Wed, Apr 24, 2024 07:39:59 AM
+//Last modified: Wed, Apr 24, 2024 07:48:58 AM
 //Codeset: 1252
 requires maya "2024";
 requires "stereoCamera" "10.0";
@@ -14,7 +14,7 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202310181224-69282f2959";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22631)";
-fileInfo "UUID" "2333556C-4B0C-631B-C477-878B522E9146";
+fileInfo "UUID" "12A2EC3D-4E36-D980-13F5-368E2E8C6B91";
 createNode transform -s -n "persp";
 	rename -uid "5BC5EB7C-48A1-E16F-50B4-C0A12A6DD55E";
 	setAttr ".v" no;
@@ -11815,7 +11815,7 @@ createNode script -n "uiConfigurationScriptNode";
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "F93DDB1D-492D-D9C8-A8B6-D29548554D16";
-	setAttr ".b" -type "string" "playbackOptions -min 1 -max 192 -ast 1 -aet 192 ";
+	setAttr ".b" -type "string" "playbackOptions -min 1 -max 240 -ast 1 -aet 240 ";
 	setAttr ".st" 6;
 createNode groupId -n "groupId17";
 	rename -uid "29D6D3C1-4C49-20D2-88CB-F5AA7ED217CC";
@@ -11940,8 +11940,8 @@ createNode animCurveTU -n "pointLight1_visibility";
 	rename -uid "9C1DB78A-4F13-361A-26E9-639FC5E35962";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 60 1 61 0 68 1 93 0 100 1;
-	setAttr -s 6 ".kot[0:5]"  5 5 5 5 5 5;
+	setAttr -s 7 ".ktv[0:6]"  1 1 60 1 61 0 68 1 93 0 100 1 233 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 createNode animCurveTU -n "RedWalls_visibility";
 	rename -uid "56F43812-4EB3-5D28-2837-958C6FD7AC77";
 	setAttr ".tan" 9;
@@ -11988,7 +11988,7 @@ createNode animCurveTU -n "EmptierWalls_visibility";
 	setAttr -s 2 ".ktv[0:1]"  1 0 96 1;
 	setAttr -s 2 ".kot[0:1]"  5 5;
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "851EB18E-4BCE-4D40-227E-66B50C8D5ACC";
+	rename -uid "749BEF26-4180-71BB-230A-FF875915B8A3";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
 	setAttr ".o" 1;
